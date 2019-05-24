@@ -1,40 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="994fc29b-ae22-4092-89a5-0156f659de89" name="Default Changelist" comment="" />
+    <list default="true" id="994fc29b-ae22-4092-89a5-0156f659de89" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/app.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/icons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dripicons-v2.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dripicons-v2.eot?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dripicons-v2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dripicons-v2.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dripicons-v2.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dropify.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dropify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dropify.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/dropify.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-brands-400.eot?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-regular-400.eot?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-solid-900.eot?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/feather.eot?t=1525787366991" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/feather.svg?t=1525787366991" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/feather.ttf?t=1525787366991" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/feather.woff?t=1525787366991" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/materialdesignicons-webfont.eot?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/materialdesignicons-webfont.eot?v=3.5.95" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/materialdesignicons-webfont.svg?v=3.5.95" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/materialdesignicons-webfont.ttf?v=3.5.95" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/materialdesignicons-webfont.woff2?v=3.5.95" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/materialdesignicons-webfont.woff?v=3.5.95" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/summernote.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/summernote.eot?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/summernote.ttf?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/summernote.woff?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/themify.eot?" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/themify.eot?-fvbane" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/themify.svg?-fvbane" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/themify.ttf?-fvbane" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/fonts/themify.woff?-fvbane" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/attached-files/img-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/attached-files/img-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/attached-files/img-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/big/bg1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/clear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/email/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/email/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/email/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/gallery/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/jstree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logo-dark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logo-light.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/logo-sm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/mail_confirm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/multiple-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/profile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/small/img-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/small/img-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/small/img-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/users/user-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/app.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/chartist.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/chartjs.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/charts-other.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/countdown.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/dashboard.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/datatables.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/draggable.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/flot.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/form-advanced.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/form-editor.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/form-fileupload.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/form-validation.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/form-wizard.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/form-xeditable.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/fullcalendar.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/gallery.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/google-maps.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/inbox.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/jvectormap.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/kanban.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/morris.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/range-sliders.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/responsive-table.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/sweet-alerts.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/tabledit.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/tablesaw.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/toastr.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/tour.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/pages/treeview.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/vendor.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-datepicker/bootstrap-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-daterangepicker/daterangepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-daterangepicker/daterangepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-timepicker/bootstrap-timepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/chart-js/Chart.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/chartist/chartist-plugin-tooltip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/chartist/chartist.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/chartist/chartist.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/custombox/custombox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/custombox/custombox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/buttons.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/buttons.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/buttons.flash.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/buttons.html5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/buttons.print.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/dataTables.buttons.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/dataTables.keyTable.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/dataTables.responsive.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/dataTables.select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/responsive.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/responsive.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/datatables/select.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/dropify/dropify.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/dropify/dropify.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.crosshair.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.orderBars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.pie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.selection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.stack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.time.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/flot-charts/jquery.flot.tooltip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/fullcalendar/fullcalendar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/fullcalendar/fullcalendar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/gmaps/gmaps.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/hopscotch/hopscotch.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/hopscotch/hopscotch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/ion-rangeslider/ion.rangeSlider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/ion-rangeslider/ion.rangeSlider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/isotope/isotope.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-countdown/jquery.countdown.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-knob/jquery.knob.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-mask-plugin/jquery.mask.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-quicksearch/jquery.quicksearch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-sparkline/jquery.sparkline.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-tabledit/jquery.tabledit.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-ui/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-vectormap/jquery-jvectormap-1.2.2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-vectormap/jquery-jvectormap-1.2.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-vectormap/jquery-jvectormap-au-mill-en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-vectormap/jquery-jvectormap-ca-lcc-en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-vectormap/jquery-jvectormap-uk-mill-en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-vectormap/jquery-jvectormap-us-merc-en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/jquery-vectormap/jquery-jvectormap-world-mill-en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/katex/katex.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/magnific-popup/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/magnific-popup/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/moment/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/morris-js/morris.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/morris-js/morris.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/multiselect/jquery.multi-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/multiselect/multi-select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/parsleyjs/parsley.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/pdfmake/pdfmake.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/pdfmake/vfs_fonts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/peity/jquery.peity.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/quill/quill.bubble.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/quill/quill.core.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/quill/quill.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/quill/quill.snow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/raphael/raphael.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/rwd-table/rwd-table.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/rwd-table/rwd-table.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/select2/select2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/summernote/summernote-bs4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/summernote/summernote-bs4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/sweetalert2/sweetalert2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/sweetalert2/sweetalert2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/switchery/switchery.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/switchery/switchery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/tablesaw/tablesaw.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/tablesaw/tablesaw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/toastr/toastr.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/toastr/toastr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/treeview/jstree.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/treeview/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/x-editable/bootstrap-editable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/libs/x-editable/bootstrap-editable.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/_footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183355_create_lab_diagnoses_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183409_create_radiology_diagnoses_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_184328_create_drugs_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="285">
               <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
             </state>
           </provider>
@@ -43,69 +260,71 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_184351_create_medications_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="255">
               <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183323_create_check_ins_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="20" column="58" lean-forward="true" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+            <state relative-caret-position="450">
+              <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+              <folding>
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/_footer.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+            <state relative-caret-position="30">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding>
+                <element signature="n#footer#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183206_create_clients_table.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/_nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="258">
+              <caret line="213" column="73" selection-start-line="213" selection-start-column="73" selection-end-line="213" selection-end-column="73" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183343_create_doctor_diagnoses_table.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183250_create_radiology_tests_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="301">
+              <caret line="144" column="28" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
+              <folding>
+                <element signature="e#2812#2831#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>dashb</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/database/migrations/2019_05_24_181845_create_model_lab_tests_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_24_181758_create_model_clients_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_24_183217_create_lab_tests_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_24_183230_create_chemists_table.php" />
@@ -128,6 +347,11 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_05_24_183355_create_lab_diagnoses_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_24_183409_create_radiology_diagnoses_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_24_184351_create_medications_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/_footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/_nav.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -220,12 +444,12 @@
     <option name="width" value="1440" />
     <option name="height" value="803" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,6 +471,17 @@
             <path>
               <item name="collabmed-demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="collabmed-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="collabmed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="collabmed-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="collabmed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="collabmed-demo" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -255,10 +490,18 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="collabmed-demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="collabmed-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,6 +510,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -296,25 +544,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558720451778</updated>
-      <workItem from="1558720453081" duration="5768000" />
+      <workItem from="1558720453081" duration="6522000" />
+      <workItem from="1558727623689" duration="1256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5768000" />
+    <option name="totallyTimeSpent" value="7778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32761088" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24391988" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.1209564" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -322,37 +567,24 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.278481" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_181845_create_model_lab_tests_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_181758_create_model_clients_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="53" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="22" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183230_create_chemists_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_181845_create_model_lab_tests_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_181758_create_model_clients_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183230_create_chemists_table.php" />
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -471,37 +703,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183206_create_clients_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
-          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183323_create_check_ins_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="58" lean-forward="true" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183343_create_doctor_diagnoses_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183355_create_lab_diagnoses_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="255">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
@@ -515,20 +726,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_184328_create_drugs_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="285">
           <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_184351_create_medications_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="255">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/pages/flot.init.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183323_create_check_ins_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_24_183343_create_doctor_diagnoses_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/_footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="n#footer#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="15" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/_nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="213" column="73" selection-start-line="213" selection-start-column="73" selection-end-line="213" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="144" column="28" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
+          <folding>
+            <element signature="e#2812#2831#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
