@@ -20,6 +20,7 @@ class CreateCheckInsTable extends Migration
             $table->string('weight', 20)->nullable();
             $table->string('temperature', 20)->nullable();
             $table->string('remarks', 191)->nullable();
+            $table->boolean('progress')->default(false); //
             $table->softDeletes();
             $table->timestamps();
 

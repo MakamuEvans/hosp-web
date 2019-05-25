@@ -24,6 +24,8 @@ Vue.component('add-drug', require('./components/AddDrug.vue').default);
 Vue.component('add-lab-test', require('./components/AddLabTest.vue').default);
 Vue.component('add-radiology-test', require('./components/AddRadiologyTest.vue').default);
 Vue.component('add-client', require('./components/AddClient.vue').default);
+Vue.component('new-check-in', require('./components/NewCheckIn.vue').default);
+Vue.component('add-user', require('./components/AddUser.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

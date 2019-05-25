@@ -37,4 +37,41 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'status'=>'boolean'
     ];
+
+    //appends
+    public function getDecodedStatusAttribute(){
+        return $this->status ? 'Active': 'InActive';
+    }
+    public function getFormattedDateAttribute(){
+        return date_format($this->created_at, "d M, Y");
+    }
+    public function getDecodedUserTypeAttribute(){
+        switch ($this->user_type){
+            case 1:
+                return "Admin";
+                break;
+            case 2:
+                return "Doctor";
+                break;
+            case 3:
+                return "Nurse";
+                break;
+            case 4:
+                return "Lab Technician";
+                break;
+            case 5:
+                return "Radiology Technician";
+                break;
+            case 6:
+                return "Chemist";
+                break;
+            case 7:
+                return "Receptionist";
+                break;
+            default:
+                return "N/A";
+        }
+    }
+
+    protected $appends = ['decoded_status', 'formatted_date', 'decoded_user_type'];
 }

@@ -26,5 +26,5 @@ class Client extends Model
         return $this->gender == 1 ? 'Male': 'Female';
     }
 
-    protected $appends = ['decoded_status', 'formatted_date'];
+    protected $appends = ['decoded_status', 'formatted_date', 'formatted_gender'];
 }

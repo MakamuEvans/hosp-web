@@ -202,7 +202,7 @@
                         <a href="index.html"><i class="fa fa-hospital"></i>Dashboard</a>
                     </li>
                     <li class="has-submenu">
-                        <a href="index.html"><i class="fa fa-book-medical"></i>Appointments</a>
+                        <a href="{{route('check-ins.index')}}"><i class="fa fa-book-medical"></i>Appointments</a>
                     </li>
                     <li class="has-submenu">
                         <a href="{{route('clients.index')}}"><i class="fa fa-users"></i>Clients</a>
@@ -217,7 +217,7 @@
                         <a href="{{route('radiology-tests.index')}}"><i class="fa fa-file-medical"></i>Radiology Tests</a>
                     </li>
                     <li class="has-submenu">
-                        <a href="index.html"><i class="fa fa-cog"></i>Settings</a>
+                        <a href="{{route('users.index')}}"><i class="fa fa-user-lock"></i>Users</a>
                     </li>
 
                 </ul>

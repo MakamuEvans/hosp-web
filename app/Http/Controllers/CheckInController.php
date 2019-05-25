@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Constants;
 use App\Model\CheckIn;
+use App\Model\DoctorDiagnosis;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckInController extends Controller
 {
@@ -14,7 +18,8 @@ class CheckInController extends Controller
      */
     public function index()
     {
-        //
+        $data = CheckIn::latest()->get();
+        return view('check-ins', compact('data'));
     }
 
     /**
@@ -24,7 +29,7 @@ class CheckInController extends Controller
      */
     public function create()
     {
-        //
+        return view('new-check-in');
     }
 
     /**
@@ -35,7 +40,20 @@ class CheckInController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $check_in = new CheckIn([
+            'client_id'=>$request->client['id'],
+            'receptionist_id'=>Auth::id(),
+            'weight'=>$request->weight,
+            'temperature'=>$request->temperature,
+            'remarks'=>$request->remarks
+        ]);
+        if ($check_in->save()){
+            DoctorDiagnosis::create([
+                'doctor_id'=>$request->doctor['id'],
+                'check_in_id'=>$check_in->id
+            ]);
+        }
+        return response()->json(['status'=>true]);
     }
 
     /**
@@ -46,7 +64,7 @@ class CheckInController extends Controller
      */
     public function show(CheckIn $checkIn)
     {
-        //
+        return view('view-check-in', compact('checkIn'));
     }
 
     /**
@@ -81,5 +99,10 @@ class CheckInController extends Controller
     public function destroy(CheckIn $checkIn)
     {
         //
+    }
+
+    public function initCheckIn(){
+        $doctors = User::where('user_type', Constants::DOCTOR)->get();
+        return response()->json(['status'=>true, 'data'=>$doctors]);
     }
 }

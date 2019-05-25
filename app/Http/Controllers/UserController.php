@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Client;
+use App\User;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $data = Client::latest()->get();
-        return view('clients', compact('data'));
+        $data = User::latest()->get();
+        return view('users', compact('data'));
     }
 
     /**
@@ -36,17 +36,20 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $client = Client::create($request->all());
-        return response()->json(['status'=>true, 'data'=>$client]);
+        if (User::where('email', $request->email)->exists())
+            return response()->json(['status'=>false, 'data'=>'Email Already Used']);
+        $request['password'] = bcrypt($request->password);
+        $user = User::create($request->all());
+        return response()->json(['status'=>true, 'data'=>$user]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Client  $client
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client)
+    public function show($id)
     {
         //
     }
@@ -54,10 +57,10 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Client  $client
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
+    public function edit($id)
     {
         //
     }
@@ -66,10 +69,10 @@ class ClientController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Client  $client
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,17 +80,11 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Client  $client
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy($id)
     {
         //
-    }
-
-    public function search(Request $request){
-        $q = $request->q;
-        $data = Client::where('names', 'like', '%'.$q.'%')->get();
-        return response()->json(['status'=>true, 'data'=>$data]);
     }
 }
