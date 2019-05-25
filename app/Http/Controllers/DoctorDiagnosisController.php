@@ -67,9 +67,11 @@ class DoctorDiagnosisController extends Controller
      * @param  \App\Model\DoctorDiagnosis  $doctorDiagnosis
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DoctorDiagnosis $doctorDiagnosis)
+    public function update(Request $request, $id)
     {
-        //
+        $doctorDiagnosis = DoctorDiagnosis::findorFail($id);
+        $doctorDiagnosis->update(['remarks'=>$request->remarks]);
+        return redirect()->back();
     }
 
     /**

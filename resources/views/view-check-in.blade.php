@@ -59,12 +59,15 @@
 
 
 
-                    <form method="post" class="card-box">
+                    <form method="post" action="{{route('doctor-diagnosis.update', [$checkIn->doctor_diagnosis->id])}}" class="card-box">
                         <span class="input-icon icon-right">
-                            <textarea rows="5" class="form-control" placeholder="Doctor's Diagnosis"></textarea>
+                            @csrf
+                            {{ method_field('PATCH') }}
+                            <label>Doctor's Diagnosis</label>
+                            <textarea rows="5" class="form-control" name="remarks" placeholder="Doctor's Diagnosis">{{$checkIn->doctor_diagnosis->remarks}}</textarea>
                         </span>
                         <div class="pt-1">
-                            <a href="" class="btn btn-primary btn-sm waves-effect waves-light">Save</a>
+                            <button type="submit" class="btn btn-primary btn-sm waves-effect waves-light">Save</button>
                         </div>
                     </form>
 
