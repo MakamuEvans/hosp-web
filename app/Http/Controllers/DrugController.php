@@ -14,7 +14,7 @@ class DrugController extends Controller
      */
     public function index()
     {
-        $data = Drug::all();
+        $data = Drug::latest()->get();
         return view('drugs', compact('data'));
     }
 
@@ -36,7 +36,8 @@ class DrugController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Drug::create($request->all());
+        return response()->json(['status'=>true, 'data'=>$request->all()]);
     }
 
     /**

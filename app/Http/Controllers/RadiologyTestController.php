@@ -14,7 +14,8 @@ class RadiologyTestController extends Controller
      */
     public function index()
     {
-        //
+        $data = RadiologyTest::latest()->get();
+        return view('radiology-tests', compact('data'));
     }
 
     /**
@@ -35,7 +36,8 @@ class RadiologyTestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        RadiologyTest::create($request->all());
+        return response()->json(['status'=>true, 'data'=>$request->all()]);
     }
 
     /**

@@ -18,10 +18,10 @@
 
                             <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
                                  aria-labelledby="myModalLabel" aria-hidden="true">
-                                <add-drug></add-drug>
+                                <add-client></add-client>
                             </div><!-- /.modal -->
                         </div>
-                        <h4 class="page-title">Drug Stock</h4>
+                        <h4 class="page-title">Clients</h4>
                     </div>
                 </div>
             </div>
@@ -38,20 +38,26 @@
                                         <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th data-priority="1">Name</th>
-                                            <th data-priority="3">Rate</th>
-                                            <th data-priority="1">Status</th>
+                                            <th data-priority="1">Names</th>
+                                            <th data-priority="3">Gender</th>
+                                            <th data-priority="3">DOB</th>
+                                            <th data-priority="3">Contact</th>
+                                            <th data-priority="1">Blood Type</th>
+                                            <th data-priority="1">Remarks</th>
                                             <th data-priority="3">Created On</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($data as $drug)
+                                        @foreach($data as $client)
                                             <tr>
-                                                <th>{{$drug->id}}</th>
-                                                <td><span class="co-name">{{$drug->name}}</span></td>
-                                                <td>{{$drug->rate}} KES</td>
-                                                <td>{{$drug->decoded_status}}</td>
-                                                <td>{{$drug->formatted_date}}</td>
+                                                <th>{{$client->id}}</th>
+                                                <td><span class="co-name">{{$client->names}}</span></td>
+                                                <td>{{$client->gender}}</td>
+                                                <td>{{$client->dob}}</td>
+                                                <td>{{$client->phone_number}}</td>
+                                                <td>{{$client->blood_type}}</td>
+                                                <td>{{$client->remarks}}</td>
+                                                <td>{{$client->formatted_date}}</td>
                                             </tr>
                                         @endforeach
                                         </tbody>

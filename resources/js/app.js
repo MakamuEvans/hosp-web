@@ -20,6 +20,10 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('add-drug', require('./components/AddDrug.vue').default);
+Vue.component('add-lab-test', require('./components/AddLabTest.vue').default);
+Vue.component('add-radiology-test', require('./components/AddRadiologyTest.vue').default);
+Vue.component('add-client', require('./components/AddClient.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

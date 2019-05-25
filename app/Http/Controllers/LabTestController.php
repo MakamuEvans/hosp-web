@@ -14,7 +14,8 @@ class LabTestController extends Controller
      */
     public function index()
     {
-        //
+        $data = LabTest::latest()->get();
+        return view('lab-tests', compact('data'));
     }
 
     /**
@@ -35,7 +36,8 @@ class LabTestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        LabTest::create($request->all());
+        return response()->json(['status'=>true, 'data'=>$request->all()]);
     }
 
     /**

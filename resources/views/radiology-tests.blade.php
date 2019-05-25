@@ -18,10 +18,10 @@
 
                             <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
                                  aria-labelledby="myModalLabel" aria-hidden="true">
-                                <add-drug></add-drug>
+                                <add-radiology-test></add-radiology-test>
                             </div><!-- /.modal -->
                         </div>
-                        <h4 class="page-title">Drug Stock</h4>
+                        <h4 class="page-title">Radiology Tests</h4>
                     </div>
                 </div>
             </div>

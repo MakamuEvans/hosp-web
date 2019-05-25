@@ -19,3 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/drugs', 'DrugController');
+Route::resource('/lab-tests', 'LabTestController');
+Route::resource('/radiology-tests', 'RadiologyTestController');
+Route::resource('/clients', 'ClientController');

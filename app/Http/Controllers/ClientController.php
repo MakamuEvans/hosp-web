@@ -14,7 +14,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        $data = Client::latest()->get();
+        return view('clients', compact('data'));
     }
 
     /**
@@ -35,7 +36,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $client = Client::create($request->all());
+        return response()->json(['status'=>true, 'data'=>$client]);
     }
 
     /**
