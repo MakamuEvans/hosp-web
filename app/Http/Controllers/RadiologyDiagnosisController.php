@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Constants;
 use App\Model\RadiologyDiagnosis;
+use App\Model\RadiologyTest;
+use App\User;
 use Illuminate\Http\Request;
 
 class RadiologyDiagnosisController extends Controller
@@ -35,7 +38,8 @@ class RadiologyDiagnosisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        RadiologyDiagnosis::create($request->all());
+        return response()->json(['status'=>true]);
     }
 
     /**
@@ -81,5 +85,11 @@ class RadiologyDiagnosisController extends Controller
     public function destroy(RadiologyDiagnosis $radiologyDiagnosis)
     {
         //
+    }
+
+    public function init(){
+        $tests = RadiologyTest::all();
+        $technicians = User::where('user_type', Constants::RADIOLOGY_TECHNICIAN)->get();
+        return response()->json(['status'=>true, 'data'=>['tests'=>$tests, 'technicians'=>$technicians]]);
     }
 }

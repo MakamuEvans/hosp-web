@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Constants;
+use App\Model\Drug;
 use App\Model\Medication;
+use App\User;
 use Illuminate\Http\Request;
 
 class MedicationController extends Controller
@@ -35,7 +38,8 @@ class MedicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Medication::create($request->all());
+        return response()->json(['data'=>true]);
     }
 
     /**
@@ -81,5 +85,11 @@ class MedicationController extends Controller
     public function destroy(Medication $medication)
     {
         //
+    }
+
+    public function init(){
+        $tests = Drug::all();
+        $technicians = User::where('user_type', Constants::CHEMIST)->get();
+        return response()->json(['status'=>true, 'data'=>['tests'=>$tests, 'technicians'=>$technicians]]);
     }
 }

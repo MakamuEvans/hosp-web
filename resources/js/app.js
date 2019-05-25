@@ -26,6 +26,9 @@ Vue.component('add-radiology-test', require('./components/AddRadiologyTest.vue')
 Vue.component('add-client', require('./components/AddClient.vue').default);
 Vue.component('new-check-in', require('./components/NewCheckIn.vue').default);
 Vue.component('add-user', require('./components/AddUser.vue').default);
+Vue.component('lab-test', require('./components/LabTest.vue').default);
+Vue.component('radiology-test', require('./components/RadiologyTest.vue').default);
+Vue.component('medication', require('./components/medication.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

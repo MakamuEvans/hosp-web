@@ -39,7 +39,15 @@ class CheckIn extends Model
     }
 
     public function lab_diagnosis(){
-        return $this->hasMany('App\Model\LabDiagnosis', 'id', 'check_in_id');
+        return $this->hasMany('App\Model\LabDiagnosis', 'check_in_id');
+    }
+
+    public function radiology_diagnosis(){
+        return $this->hasMany('App\Model\RadiologyDiagnosis', 'check_in_id');
+    }
+
+    public function medication(){
+        return $this->hasMany('App\Model\Medication', 'check_in_id');
     }
 
 }

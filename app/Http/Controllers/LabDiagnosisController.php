@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Constants;
 use App\Model\LabDiagnosis;
+use App\Model\LabTest;
+use App\User;
 use Illuminate\Http\Request;
 
 class LabDiagnosisController extends Controller
@@ -35,7 +38,8 @@ class LabDiagnosisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        LabDiagnosis::create($request->all());
+        return response()->json(['status'=>true]);
     }
 
     /**
@@ -81,5 +85,11 @@ class LabDiagnosisController extends Controller
     public function destroy(LabDiagnosis $labDiagnosis)
     {
         //
+    }
+
+    public function init(){
+        $tests = LabTest::all();
+        $technicians = User::where('user_type', Constants::LAB_TECHNICIAN)->get();
+        return response()->json(['status'=>true, 'data'=>['tests'=>$tests, 'technicians'=>$technicians]]);
     }
 }

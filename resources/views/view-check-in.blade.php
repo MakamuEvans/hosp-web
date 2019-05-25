@@ -5,7 +5,7 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="wrapper">
+    <div class="wrapper" id="app">
         <div class="container-fluid">
 
             <!-- start page title -->
@@ -72,8 +72,12 @@
                         <div class="col-12">
                             <div class="card-box">
                                 <div class="row pull-right">
-
-                                    <button class="pull-right btn btn-success">Request Lab Test</button>
+                                    <label style="margin-right: 20px">Lab Tests  </label>
+                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal" class="pull-right">Request Lab Test</a>
+                                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
+                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <lab-test :checkin="{{$checkIn}}"></lab-test>
+                                    </div><!-- /.modal -->
                                 </div>
                                 <div class="responsive-table-plugin">
                                     <div class="table-rep-plugin">
@@ -95,7 +99,97 @@
                                                         <td><span class="co-name">{{$item->test->name}}</span></td>
                                                         <td>{{$item->technician->name}}</td>
                                                         <td>{{$item->remarks}}</td>
-                                                        <td>{{$client->formatted_date}}</td>
+                                                        <td>{{$item->formatted_date}}</td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <div class="row pull-right">
+                                    <label style="margin-right: 20px">Radiology Tests  </label>
+                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal2" class="pull-right">Request Radiology Test</a>
+                                    <div id="myModal2" class="modal fade" tabindex="-1" role="dialog"
+                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <radiology-test :checkin="{{$checkIn}}"></radiology-test>
+                                    </div><!-- /.modal -->
+                                </div>
+                                <div class="responsive-table-plugin">
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table table-striped mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th data-priority="1">Test Name</th>
+                                                    <th data-priority="3">Technician</th>
+                                                    <th data-priority="3">Remarks</th>
+                                                    <th data-priority="3">dated</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($checkIn->radiology_diagnosis as $item)
+                                                    <tr>
+                                                        <th>{{$item->id}}</th>
+                                                        <td><span class="co-name">{{$item->test->name}}</span></td>
+                                                        <td>{{$item->technician->name}}</td>
+                                                        <td>{{$item->remarks}}</td>
+                                                        <td>{{$item->formatted_date}}</td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <div class="row pull-right">
+                                    <label style="margin-right: 20px">Medication</label>
+                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal3" class="pull-right">Request Radiology Test</a>
+                                    <div id="myModal3" class="modal fade" tabindex="-1" role="dialog"
+                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <medication :checkin="{{$checkIn}}"></medication>
+                                    </div><!-- /.modal -->
+                                </div>
+                                <div class="responsive-table-plugin">
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table table-striped mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th data-priority="1">Drug</th>
+                                                    <th data-priority="3">Chemist</th>
+                                                    <th data-priority="3">Remarks</th>
+                                                    <th data-priority="3">dated</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($checkIn->medication as $item)
+                                                    <tr>
+                                                        <th>{{$item->id}}</th>
+                                                        <td><span class="co-name">{{$item->drug->name}}</span></td>
+                                                        <td>{{$item->chemist->name ?? ''}}</td>
+                                                        <td>{{$item->remarks}}</td>
+                                                        <td>{{$item->formatted_date}}</td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>

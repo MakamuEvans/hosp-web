@@ -17,7 +17,7 @@ class CreateMedicationsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('check_in_id')->unsigned();
             $table->bigInteger('drug_id')->unsigned();
-            $table->bigInteger('chemist_id')->unsigned();
+            $table->bigInteger('chemist_id')->unsigned()->nullable();
             $table->string('remarks', 191)->nullable();
             $table->softDeletes();
             $table->timestamps();
