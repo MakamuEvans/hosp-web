@@ -14,7 +14,8 @@ class DrugController extends Controller
      */
     public function index()
     {
-        //
+        $data = Drug::all();
+        return view('drugs', compact('data'));
     }
 
     /**

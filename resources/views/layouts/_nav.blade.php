@@ -205,7 +205,7 @@
                         <a href="index.html"><i class="fa fa-users"></i>Clients</a>
                     </li>
                     <li class="has-submenu">
-                        <a href="index.html"><i class="fa fa-book-medical"></i>Drugs</a>
+                        <a href="{{route('drugs.index')}}"><i class="fa fa-book-medical"></i>Drugs</a>
                     </li>
                     <li class="has-submenu">
                         <a href="index.html"><i class="fa fa-clinic-medical"></i>Lab Tests</a>
