@@ -16,10 +16,17 @@ class CheckInController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = CheckIn::latest()->get();
-        return view('check-ins', compact('data'));
+        $data = CheckIn::latest();
+        if (isset($request->name)){
+            $data = $data->whereHas('client', function ($q) use ($request){
+                $q->where('names', 'like', '%'.$request->name.'%');
+            });
+        }
+        $data = $data->get();
+        $filters = $request->all();
+        return view('check-ins', compact('data', 'filters'));
     }
 
     /**
@@ -53,7 +60,7 @@ class CheckInController extends Controller
                 'check_in_id'=>$check_in->id
             ]);
         }
-        return response()->json(['status'=>true]);
+        return response()->json($check_in);
     }
 
     /**

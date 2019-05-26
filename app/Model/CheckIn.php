@@ -9,7 +9,7 @@ class CheckIn extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['client_id', 'receptionist_id', 'weight', 'temperature'. 'remarks', 'progress'];
+    protected $fillable = ['client_id', 'receptionist_id', 'weight', 'temperature', 'remarks', 'progress'];
 
     protected $casts = [
         'progress'=>'boolean'
