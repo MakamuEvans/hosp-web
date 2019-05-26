@@ -7,6 +7,7 @@ use App\Model\LabDiagnosis;
 use App\Model\LabTest;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class LabDiagnosisController extends Controller
 {
@@ -71,9 +72,10 @@ class LabDiagnosisController extends Controller
      * @param  \App\Model\LabDiagnosis  $labDiagnosis
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LabDiagnosis $labDiagnosis)
+    public function update(Request $request)
     {
-        //
+        $data = LabDiagnosis::where('id', $request->id)->update(['remarks'=>$request->remarks]);
+        return response()->json(['status'=>true]);
     }
 
     /**

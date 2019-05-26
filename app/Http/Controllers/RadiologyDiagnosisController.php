@@ -73,7 +73,8 @@ class RadiologyDiagnosisController extends Controller
      */
     public function update(Request $request, RadiologyDiagnosis $radiologyDiagnosis)
     {
-        //
+        $data = RadiologyDiagnosis::where('id', $request->id)->update(['remarks'=>$request->remarks]);
+        return response()->json(['status'=>true]);
     }
 
     /**

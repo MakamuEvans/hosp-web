@@ -73,7 +73,8 @@ class MedicationController extends Controller
      */
     public function update(Request $request, Medication $medication)
     {
-        //
+        $data = Medication::where('id', $request->id)->update(['remarks'=>$request->remarks]);
+        return response()->json(['status'=>true]);
     }
 
     /**

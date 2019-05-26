@@ -16,11 +16,11 @@
                             <option v-for="test in tests" :value="test.id">{{test.name}}</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Chemist</label>
-                        <select class="form-control" v-model="formData.chemist_id">
-                            <option v-for="technician in technicians" :value="technician.id">{{technician.name}}</option>
-                        </select>
+                    <div class="form-group" v-if="medication !== undefined">
+                        <label>Remarks</label>
+                        <textarea class="form-control" v-model="formData.remarks">
+
+                        </textarea>
                     </div>
                 </form>
             </div>
@@ -39,7 +39,7 @@
             this.init();
         },
         props: [
-          'checkin'
+          'checkin', 'medication'
         ],
         data() {
             return {
@@ -62,15 +62,30 @@
                     return;
                 } else
                     vm.hasError = false
+                if (vm.medication){
+                    //update
+                    vm.formData._method = 'PUT';
+                    axios.post(base_url + '/medication/'+vm.medication.id, vm.formData)
+                        .then(response=>{
+                            console.log(response);
+                            location.reload();
+                        })
+                } else {
+                    //create
+                    axios.post(base_url + '/medication', vm.formData)
+                        .then(response=>{
+                            console.log(response);
+                            location.reload();
+                        })
+                }
                 vm.saveButton = 'Requesting...';
-                axios.post(base_url + '/medication', vm.formData)
-                    .then(response=>{
-                        console.log(response);
-                        location.reload();
-                    })
             },
             init(){
               let vm = this;
+              if (vm.medication !== undefined){
+                  vm.formData = vm.medication;
+                  vm.saveButton = "Update";
+              }
               vm.formData.check_in_id = vm.checkin.id
               axios.get(base_url + '/init-medication')
                   .then(response =>{

@@ -13,7 +13,9 @@
                 <div class="col-12">
                     <div class="page-title-box">
                         <div class="page-title-right">
-                            <a href="{{route('check-ins.create')}}" class="btn btn-success">New Check In</a>
+                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::RECEPTIONIST)
+                                <a href="{{route('check-ins.create')}}" class="btn btn-success">New Check In</a>
+                            @endif
                             @php
                                 $filters['export'] = 'excel';
                             @endphp
@@ -39,7 +41,8 @@
                             <form class="form-inline" style="margin: 10px">
                                 <div class="form-group">
                                     <label for="staticEmail2" class="sr-only">Name</label>
-                                    <input type="text" class="form-control" name="name" placeholder="Search by Name"  value="{{isset($filters['name']) ? $filters['name'] : ''}}">
+                                    <input type="text" class="form-control" name="name" placeholder="Search by Name"
+                                           value="{{isset($filters['name']) ? $filters['name'] : ''}}">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Search</button>
                             </form>

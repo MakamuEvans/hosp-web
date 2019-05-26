@@ -12,15 +12,13 @@
                 <form role="form">
                     <div class="form-group">
                         <label>Test</label>
-                        <select class="form-control" v-model="formData.test_id">
+                        <select class="form-control" :disabled="test !== undefined" v-model="formData.test_id">
                             <option v-for="test in tests" :value="test.id">{{test.name}}</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Radiology technician</label>
-                        <select class="form-control" v-model="formData.technician_id">
-                            <option v-for="technician in technicians" :value="technician.id">{{technician.name}}</option>
-                        </select>
+                    <div class="form-group" v-if="test !== undefined">
+                        <label>Remarks</label>
+                        <textarea class="form-control" v-model="formData.remarks"></textarea>
                     </div>
                 </form>
             </div>
@@ -39,7 +37,7 @@
             this.init();
         },
         props: [
-          'checkin'
+          'checkin', 'test'
         ],
         data() {
             return {
@@ -49,6 +47,7 @@
                     check_in_id: '',
                     test_id: '',
                     technician_id: '',
+                    remarks: ''
                 },
                 saveButton: 'Request',
                 hasError: false
@@ -61,16 +60,32 @@
                     vm.hasError = true;
                     return;
                 } else
-                    vm.hasError = false
-                vm.saveButton = 'Requesting...';
-                axios.post(base_url + '/radiology-diagnosis', vm.formData)
-                    .then(response=>{
-                        console.log(response);
-                        location.reload();
-                    })
+                    vm.hasError = false;
+                if (vm.test !== undefined){
+                    //update
+                    vm.saveButton = 'Requesting...';
+                    vm.formData._method = 'PUT';
+                    axios.post(base_url + '/radiology-diagnosis/'+ vm.test.id, vm.formData)
+                        .then(response=>{
+                            console.log(response);
+                            location.reload();
+                        })
+                } else {
+                    //create
+                    vm.saveButton = 'Requesting...';
+                    axios.post(base_url + '/radiology-diagnosis', vm.formData)
+                        .then(response=>{
+                            console.log(response);
+                            location.reload();
+                        })
+                }
             },
             init(){
               let vm = this;
+              if (vm.test !== undefined){
+                  vm.formData = vm.test;
+                  vm.saveButton = 'Update';
+              }
               vm.formData.check_in_id = vm.checkin.id
               axios.get(base_url + '/init-radiology-diagnosis')
                   .then(response =>{
@@ -83,7 +98,7 @@
                 console.log("validate called");
                 var vm = this;
                 //console.log();
-                if (vm.formData.test_id == "" || vm.formData.technician_id == "")
+                if (vm.formData.test_id == "")
                     return false;
                 return true
             },

@@ -2014,7 +2014,7 @@ __webpack_require__.r(__webpack_exports__);
     saveData: function saveData() {
       var vm = this;
 
-      if (!vm.validate) {
+      if (!vm.validate()) {
         vm.hasError = true;
         return;
       } else vm.hasError = false;
@@ -2027,7 +2027,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     //validate
     validate: function validate() {
-      if (isEmpty(this.formData.name) || isEmpty(this.formData.rate)) return false;
+      if (this.isEmpty(this.formData.name) || this.isEmpty(this.formData.rate)) return false;
       return true;
     },
     //check if var is empty
@@ -2320,12 +2320,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Add Drug mounted.');
     this.init();
   },
-  props: ['checkin'],
+  props: ['checkin', 'test'],
   data: function data() {
     return {
       tests: [],
@@ -2333,7 +2337,8 @@ __webpack_require__.r(__webpack_exports__);
       formData: {
         check_in_id: '',
         test_id: '',
-        technician_id: ''
+        technician_id: '',
+        remarks: ''
       },
       saveButton: 'Request',
       hasError: false
@@ -2343,19 +2348,36 @@ __webpack_require__.r(__webpack_exports__);
     saveData: function saveData() {
       var vm = this;
 
-      if (!vm.validate) {
+      if (!vm.validate()) {
         vm.hasError = true;
         return;
       } else vm.hasError = false;
 
-      vm.saveButton = 'Requesting...';
-      axios.post(base_url + '/lab-diagnosis', vm.formData).then(function (response) {
-        console.log(response);
-        location.reload();
-      });
+      if (vm.test !== undefined) {
+        //update
+        vm.saveButton = 'Updating...';
+        vm.formData._method = 'PUT';
+        axios.post(base_url + '/lab-diagnosis/' + vm.test.id, vm.formData).then(function (response) {
+          console.log(response);
+          location.reload();
+        });
+      } else {
+        //create
+        vm.saveButton = 'Requesting...';
+        axios.post(base_url + '/lab-diagnosis', vm.formData).then(function (response) {
+          console.log(response);
+          location.reload();
+        });
+      }
     },
     init: function init() {
       var vm = this;
+
+      if (vm.test !== undefined) {
+        vm.formData = vm.test;
+        vm.saveButton = "Update";
+      }
+
       vm.formData.check_in_id = vm.checkin.id;
       axios.get(base_url + '/init-lab-diagnosis').then(function (response) {
         vm.tests = response.data.data.tests;
@@ -2364,7 +2386,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     //validate
     validate: function validate() {
-      if (isEmpty(this.formData.test_id) || isEmpty(this.formData.technician_id)) return false;
+      if (this.formData.test_id == "") return false;
       return true;
     },
     //check if var is empty
@@ -2544,14 +2566,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('mounted.');
     this.init();
   },
-  props: ['checkin'],
+  props: ['checkin', 'test'],
   data: function data() {
     return {
       tests: [],
@@ -2559,7 +2579,8 @@ __webpack_require__.r(__webpack_exports__);
       formData: {
         check_in_id: '',
         test_id: '',
-        technician_id: ''
+        technician_id: '',
+        remarks: ''
       },
       saveButton: 'Request',
       hasError: false
@@ -2574,14 +2595,31 @@ __webpack_require__.r(__webpack_exports__);
         return;
       } else vm.hasError = false;
 
-      vm.saveButton = 'Requesting...';
-      axios.post(base_url + '/radiology-diagnosis', vm.formData).then(function (response) {
-        console.log(response);
-        location.reload();
-      });
+      if (vm.test !== undefined) {
+        //update
+        vm.saveButton = 'Requesting...';
+        vm.formData._method = 'PUT';
+        axios.post(base_url + '/radiology-diagnosis/' + vm.test.id, vm.formData).then(function (response) {
+          console.log(response);
+          location.reload();
+        });
+      } else {
+        //create
+        vm.saveButton = 'Requesting...';
+        axios.post(base_url + '/radiology-diagnosis', vm.formData).then(function (response) {
+          console.log(response);
+          location.reload();
+        });
+      }
     },
     init: function init() {
       var vm = this;
+
+      if (vm.test !== undefined) {
+        vm.formData = vm.test;
+        vm.saveButton = 'Update';
+      }
+
       vm.formData.check_in_id = vm.checkin.id;
       axios.get(base_url + '/init-radiology-diagnosis').then(function (response) {
         vm.tests = response.data.data.tests;
@@ -2593,7 +2631,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log("validate called");
       var vm = this; //console.log();
 
-      if (vm.formData.test_id == "" || vm.formData.technician_id == "") return false;
+      if (vm.formData.test_id == "") return false;
       return true;
     },
     //check if var is empty
@@ -2653,7 +2691,7 @@ __webpack_require__.r(__webpack_exports__);
     console.log('mounted.');
     this.init();
   },
-  props: ['checkin'],
+  props: ['checkin', 'medication'],
   data: function data() {
     return {
       tests: [],
@@ -2676,14 +2714,31 @@ __webpack_require__.r(__webpack_exports__);
         return;
       } else vm.hasError = false;
 
+      if (vm.medication) {
+        //update
+        vm.formData._method = 'PUT';
+        axios.post(base_url + '/medication/' + vm.medication.id, vm.formData).then(function (response) {
+          console.log(response);
+          location.reload();
+        });
+      } else {
+        //create
+        axios.post(base_url + '/medication', vm.formData).then(function (response) {
+          console.log(response);
+          location.reload();
+        });
+      }
+
       vm.saveButton = 'Requesting...';
-      axios.post(base_url + '/medication', vm.formData).then(function (response) {
-        console.log(response);
-        location.reload();
-      });
     },
     init: function init() {
       var vm = this;
+
+      if (vm.medication !== undefined) {
+        vm.formData = vm.medication;
+        vm.saveButton = "Update";
+      }
+
       vm.formData.check_in_id = vm.checkin.id;
       axios.get(base_url + '/init-medication').then(function (response) {
         vm.tests = response.data.data.tests;
@@ -39196,6 +39251,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
+                attrs: { disabled: _vm.test !== undefined },
                 on: {
                   change: function($event) {
                     var $$selectedVal = Array.prototype.filter
@@ -39223,47 +39279,32 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", [_vm._v("Lab technician")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.formData.technician_id,
-                    expression: "formData.technician_id"
+          _vm.test !== undefined
+            ? _c("div", { staticClass: "form-group" }, [
+                _c("label", [_vm._v("Remarks")]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.remarks,
+                      expression: "formData.remarks"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  domProps: { value: _vm.formData.remarks },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "remarks", $event.target.value)
+                    }
                   }
-                ],
-                staticClass: "form-control",
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.$set(
-                      _vm.formData,
-                      "technician_id",
-                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-                    )
-                  }
-                }
-              },
-              _vm._l(_vm.technicians, function(technician) {
-                return _c("option", { domProps: { value: technician.id } }, [
-                  _vm._v(_vm._s(technician.name))
-                ])
-              }),
-              0
-            )
-          ])
+                })
+              ])
+            : _vm._e()
         ])
       ]),
       _vm._v(" "),
@@ -39650,6 +39691,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
+                attrs: { disabled: _vm.test !== undefined },
                 on: {
                   change: function($event) {
                     var $$selectedVal = Array.prototype.filter
@@ -39677,47 +39719,32 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", [_vm._v("Radiology technician")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.formData.technician_id,
-                    expression: "formData.technician_id"
+          _vm.test !== undefined
+            ? _c("div", { staticClass: "form-group" }, [
+                _c("label", [_vm._v("Remarks")]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.remarks,
+                      expression: "formData.remarks"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  domProps: { value: _vm.formData.remarks },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "remarks", $event.target.value)
+                    }
                   }
-                ],
-                staticClass: "form-control",
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.$set(
-                      _vm.formData,
-                      "technician_id",
-                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-                    )
-                  }
-                }
-              },
-              _vm._l(_vm.technicians, function(technician) {
-                return _c("option", { domProps: { value: technician.id } }, [
-                  _vm._v(_vm._s(technician.name))
-                ])
-              }),
-              0
-            )
-          ])
+                })
+              ])
+            : _vm._e()
         ])
       ]),
       _vm._v(" "),
@@ -39846,47 +39873,32 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", [_vm._v("Chemist")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.formData.chemist_id,
-                    expression: "formData.chemist_id"
+          _vm.medication !== undefined
+            ? _c("div", { staticClass: "form-group" }, [
+                _c("label", [_vm._v("Remarks")]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.formData.remarks,
+                      expression: "formData.remarks"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  domProps: { value: _vm.formData.remarks },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.formData, "remarks", $event.target.value)
+                    }
                   }
-                ],
-                staticClass: "form-control",
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.$set(
-                      _vm.formData,
-                      "chemist_id",
-                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-                    )
-                  }
-                }
-              },
-              _vm._l(_vm.technicians, function(technician) {
-                return _c("option", { domProps: { value: technician.id } }, [
-                  _vm._v(_vm._s(technician.name))
-                ])
-              }),
-              0
-            )
-          ])
+                })
+              ])
+            : _vm._e()
         ])
       ]),
       _vm._v(" "),

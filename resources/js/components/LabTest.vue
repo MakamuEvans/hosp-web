@@ -12,15 +12,19 @@
                 <form role="form">
                     <div class="form-group">
                         <label>Test</label>
-                        <select class="form-control" v-model="formData.test_id">
+                        <select :disabled="test !== undefined" class="form-control" v-model="formData.test_id">
                             <option v-for="test in tests" :value="test.id">{{test.name}}</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label>Lab technician</label>
                         <select class="form-control" v-model="formData.technician_id">
                             <option v-for="technician in technicians" :value="technician.id">{{technician.name}}</option>
                         </select>
+                    </div>-->
+                    <div class="form-group" v-if="test !== undefined">
+                        <label>Remarks</label>
+                        <textarea class="form-control" v-model="formData.remarks"></textarea>
                     </div>
                 </form>
             </div>
@@ -39,7 +43,7 @@
             this.init();
         },
         props: [
-          'checkin'
+          'checkin', 'test'
         ],
         data() {
             return {
@@ -49,6 +53,7 @@
                     check_in_id: '',
                     test_id: '',
                     technician_id: '',
+                    remarks: ''
                 },
                 saveButton: 'Request',
                 hasError: false
@@ -57,21 +62,37 @@
         methods: {
             saveData(){
                 let vm = this;
-                if (!vm.validate){
+                if (!vm.validate()){
                     vm.hasError = true;
                     return;
                 } else
-                    vm.hasError = false
-                vm.saveButton = 'Requesting...';
-                axios.post(base_url + '/lab-diagnosis', vm.formData)
-                    .then(response=>{
-                        console.log(response)
-                        location.reload();
-                    })
+                    vm.hasError = false;
+                if (vm.test !== undefined){
+                    //update
+                    vm.saveButton = 'Updating...';
+                    vm.formData._method = 'PUT';
+                    axios.post(base_url + '/lab-diagnosis/'+ vm.test.id, vm.formData)
+                        .then(response=>{
+                            console.log(response)
+                            location.reload();
+                        })
+                } else {
+                    //create
+                    vm.saveButton = 'Requesting...';
+                    axios.post(base_url + '/lab-diagnosis', vm.formData)
+                        .then(response=>{
+                            console.log(response)
+                            location.reload();
+                        })
+                }
             },
             init(){
               let vm = this;
-              vm.formData.check_in_id = vm.checkin.id
+              if (vm.test !== undefined){
+                  vm.formData = vm.test
+                  vm.saveButton = "Update";
+              }
+              vm.formData.check_in_id = vm.checkin.id;
               axios.get(base_url + '/init-lab-diagnosis')
                   .then(response =>{
                       vm.tests = response.data.data.tests;
@@ -80,7 +101,7 @@
             },
             //validate
             validate(){
-                if (isEmpty(this.formData.test_id) || isEmpty(this.formData.technician_id))
+                if (this.formData.test_id == "")
                     return false;
                 return true
             },

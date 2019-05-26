@@ -27,29 +27,12 @@
 
                             <div class="profile-info-detail overflow-hidden">
                                 <h4 class="m-0">{{$checkIn->client->names}}</h4>
-                                <p class="text-muted"><i>DOB: {{$checkIn->client->dob}} | Gender: {{$checkIn->client->formatted_gender}} | Blood Group: {{$checkIn->client->blood_type}}</i></p>
-                                <p class="text-muted"><i>Physical Checks: Weight{{$checkIn->weight}} | Body Temperature: {{$checkIn->temperature}}</i></p>
+                                <p class="text-muted"><i>DOB: {{$checkIn->client->dob}} |
+                                        Gender: {{$checkIn->client->formatted_gender}} | Blood
+                                        Group: {{$checkIn->client->blood_type}}</i></p>
+                                <p class="text-muted"><i>Physical Checks: Weight{{$checkIn->weight}} | Body
+                                        Temperature: {{$checkIn->temperature}}</i></p>
                                 <p class="font-13">Notes: {{$checkIn->client->remarks}}</p>
-
-                                <ul class="social-list list-inline mt-3 mb-0">
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-purple text-purple"><i
-                                                    class="mdi mdi-facebook"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i
-                                                    class="mdi mdi-google"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-info text-info"><i
-                                                    class="mdi mdi-twitter"></i></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i
-                                                    class="mdi mdi-github-circle"></i></a>
-                                    </li>
-                                </ul>
-
                             </div>
 
                             <div class="clearfix"></div>
@@ -58,25 +41,31 @@
                     <!--/ meta -->
 
 
-
-                    <form method="post" action="{{route('doctor-diagnosis.update', [$checkIn->doctor_diagnosis->id])}}" class="card-box">
+                    <form method="post" action="{{route('doctor-diagnosis.update', [$checkIn->doctor_diagnosis->id])}}"
+                          class="card-box">
                         <span class="input-icon icon-right">
                             @csrf
                             {{ method_field('PATCH') }}
                             <label>Doctor's Diagnosis</label>
-                            <textarea rows="5" class="form-control" name="remarks" placeholder="Doctor's Diagnosis">{{$checkIn->doctor_diagnosis->remarks}}</textarea>
+                            <textarea rows="5" class="form-control" name="remarks"
+                                      placeholder="Doctor's Diagnosis">{{$checkIn->doctor_diagnosis->remarks}}</textarea>
                         </span>
-                        <div class="pt-1">
-                            <button type="submit" class="btn btn-primary btn-sm waves-effect waves-light">Save</button>
-                        </div>
+                        @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::DOCTOR)
+                            <div class="pt-1">
+                                <button type="submit"
+                                        class="btn form-control btn-primary btn-sm waves-effect waves-light">Save
+                                </button>
+                            </div>
+                        @endif
                     </form>
 
                     <div class="row">
                         <div class="col-12">
                             <div class="card-box">
                                 <div class="row pull-right">
-                                    <label style="margin-right: 20px">Lab Tests  </label>
-                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal" class="pull-right">Request Lab Test</a>
+                                    <label style="margin-right: 20px">Lab Tests </label>
+                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal"
+                                       class="pull-right">Request Lab Test</a>
                                     <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <lab-test :checkin="{{$checkIn}}"></lab-test>
@@ -93,6 +82,7 @@
                                                     <th data-priority="3">Technician</th>
                                                     <th data-priority="3">Remarks</th>
                                                     <th data-priority="3">dated</th>
+                                                    <th data-priority="3">Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -100,9 +90,24 @@
                                                     <tr>
                                                         <th>{{$item->id}}</th>
                                                         <td><span class="co-name">{{$item->test->name}}</span></td>
-                                                        <td>{{$item->technician->name}}</td>
+                                                        <td>{{$item->technician->name ?? 'N/A'}}</td>
                                                         <td>{{$item->remarks}}</td>
                                                         <td>{{$item->formatted_date}}</td>
+                                                        <td>
+                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::LAB_TECHNICIAN)
+                                                                <a href="javascript;;" title="Reply" data-toggle="modal"
+                                                                   data-target="#lab_{{$item->id}}"><i
+                                                                            class="fa fa-reply"></i> </a>
+                                                                <div id="lab_{{$item->id}}" class="modal fade"
+                                                                     tabindex="-1" role="dialog"
+                                                                     aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                    <lab-test :checkin="{{$checkIn}}"
+                                                                              :test="{{$item}}"></lab-test>
+                                                                </div><!-- /.modal -->
+                                                            @else
+                                                                Not Allowed
+                                                            @endif
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>
@@ -120,8 +125,9 @@
                         <div class="col-12">
                             <div class="card-box">
                                 <div class="row pull-right">
-                                    <label style="margin-right: 20px">Radiology Tests  </label>
-                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal2" class="pull-right">Request Radiology Test</a>
+                                    <label style="margin-right: 20px">Radiology Tests </label>
+                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal2"
+                                       class="pull-right">Request Radiology Test</a>
                                     <div id="myModal2" class="modal fade" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <radiology-test :checkin="{{$checkIn}}"></radiology-test>
@@ -137,7 +143,8 @@
                                                     <th data-priority="1">Test Name</th>
                                                     <th data-priority="3">Technician</th>
                                                     <th data-priority="3">Remarks</th>
-                                                    <th data-priority="3">dated</th>
+                                                    <th data-priority="3">Dated</th>
+                                                    <th data-priority="3">Actions</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -145,9 +152,24 @@
                                                     <tr>
                                                         <th>{{$item->id}}</th>
                                                         <td><span class="co-name">{{$item->test->name}}</span></td>
-                                                        <td>{{$item->technician->name}}</td>
+                                                        <td>{{$item->technician->name ?? 'N/A'}}</td>
                                                         <td>{{$item->remarks}}</td>
                                                         <td>{{$item->formatted_date}}</td>
+                                                        <td>
+                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::RADIOLOGY_TECHNICIAN)
+                                                                <a href="javascript;;" title="Reply" data-toggle="modal"
+                                                                   data-target="#radiology_{{$item->id}}"><i
+                                                                            class="fa fa-reply"></i> </a>
+                                                                <div id="radiology_{{$item->id}}" class="modal fade"
+                                                                     tabindex="-1" role="dialog"
+                                                                     aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                    <radiology-test :checkin="{{$checkIn}}"
+                                                                              :test="{{$item}}"></radiology-test>
+                                                                </div><!-- /.modal -->
+                                                            @else
+                                                                Not Allowed
+                                                            @endif
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>
@@ -166,7 +188,8 @@
                             <div class="card-box">
                                 <div class="row pull-right">
                                     <label style="margin-right: 20px">Medication</label>
-                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal3" class="pull-right">Request Radiology Test</a>
+                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal3"
+                                       class="pull-right">Request Drugs</a>
                                     <div id="myModal3" class="modal fade" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <medication :checkin="{{$checkIn}}"></medication>
@@ -182,7 +205,8 @@
                                                     <th data-priority="1">Drug</th>
                                                     <th data-priority="3">Chemist</th>
                                                     <th data-priority="3">Remarks</th>
-                                                    <th data-priority="3">dated</th>
+                                                    <th data-priority="3">Dated</th>
+                                                    <th data-priority="3">Actions</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -190,9 +214,24 @@
                                                     <tr>
                                                         <th>{{$item->id}}</th>
                                                         <td><span class="co-name">{{$item->drug->name}}</span></td>
-                                                        <td>{{$item->chemist->name ?? ''}}</td>
+                                                        <td>{{$item->chemist->name ?? 'N/A'}}</td>
                                                         <td>{{$item->remarks}}</td>
                                                         <td>{{$item->formatted_date}}</td>
+                                                        <td>
+                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::CHEMIST)
+                                                                <a href="javascript;;" title="Reply" data-toggle="modal"
+                                                                   data-target="#chem_{{$item->id}}"><i
+                                                                            class="fa fa-reply"></i> </a>
+                                                                <div id="chem_{{$item->id}}" class="modal fade"
+                                                                     tabindex="-1" role="dialog"
+                                                                     aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                    <medication :checkin="{{$checkIn}}"
+                                                                              :medication="{{$item}}"></medication>
+                                                                </div><!-- /.modal -->
+                                                            @else
+                                                                Not Allowed
+                                                            @endif
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>

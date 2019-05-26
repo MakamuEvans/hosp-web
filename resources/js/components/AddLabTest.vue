@@ -52,7 +52,7 @@
         methods: {
             saveData(){
                 let vm = this;
-                if (!vm.validate){
+                if (!vm.validate()){
                     vm.hasError = true;
                     return;
                 } else
@@ -66,7 +66,7 @@
             },
             //validate
             validate(){
-                if (isEmpty(this.formData.name) || isEmpty(this.formData.rate))
+                if (this.isEmpty(this.formData.name) || this.isEmpty(this.formData.rate))
                     return false;
                 return true
             },

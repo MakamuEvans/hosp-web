@@ -17,7 +17,7 @@ class CreateRadiologyDiagnosesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('check_in_id')->unsigned();
             $table->bigInteger('test_id')->unsigned();
-            $table->bigInteger('technician_id')->unsigned();
+            $table->bigInteger('technician_id')->unsigned()->nullable();
             $table->string('remarks', 191)->nullable();
             $table->softDeletes();
             $table->timestamps();

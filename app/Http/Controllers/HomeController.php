@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\CheckIn;
+use App\Model\Client;
+use App\Model\Drug;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $clients = Client::count();
+        $appointments = CheckIn::count();
+        $drugs = Drug::count();
+        $users = User::count();
+        return view('home', compact('clients', 'appointments', 'drugs', 'users'));
     }
 }

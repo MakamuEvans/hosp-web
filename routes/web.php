@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/check-ins', 'CheckInController');
     Route::resource('/users', 'UserController');
     Route::resource('/lab-diagnosis', 'LabDiagnosisController');
+    Route::post('/update-lab-diagnosis', 'LabDiagnosisController@update');
     Route::resource('/radiology-diagnosis', 'RadiologyDiagnosisController');
     Route::resource('/medication', 'MedicationController');
     Route::resource('/doctor-diagnosis', 'DoctorDiagnosisController');
