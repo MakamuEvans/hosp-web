@@ -14,7 +14,13 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <a href="{{route('check-ins.create')}}" class="btn btn-success">New Check In</a>
-                            <a href="" class="btn btn-success">Export</a>
+                            @php
+                                $filters['export'] = 'excel';
+                            @endphp
+                            <a href="{{route('check-ins.index', $filters)}}" class="btn btn-success">Export</a>
+                            @php
+                                unset($filters['export']);
+                            @endphp
                             <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
                                  aria-labelledby="myModalLabel" aria-hidden="true">
                                 <new-check-in></new-check-in>

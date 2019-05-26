@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExcelExport;
 use App\Helpers\Constants;
 use App\Model\CheckIn;
 use App\Model\DoctorDiagnosis;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CheckInController extends Controller
 {
@@ -25,6 +27,8 @@ class CheckInController extends Controller
             });
         }
         $data = $data->get();
+        if (isset($request->export) && $request->export == 'excel')
+            return Excel::download(new ExcelExport('export', 'data', $data), 'data.xlsx');
         $filters = $request->all();
         return view('check-ins', compact('data', 'filters'));
     }
