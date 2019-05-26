@@ -19,7 +19,8 @@
                 </li>
 
                 <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#"
+                       role="button" aria-haspopup="false" aria-expanded="false">
                         <img src="{{asset('assets/images/users/user-1.jpg')}}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ml-1">
                             {{\Illuminate\Support\Facades\Auth::user()->name}}
@@ -61,18 +62,27 @@
                     <li class="has-submenu">
                         <a href="{{route('clients.index')}}"><i class="fa fa-users"></i>Clients</a>
                     </li>
-                    <li class="has-submenu">
-                        <a href="{{route('drugs.index')}}"><i class="fa fa-syringe"></i>Drugs</a>
-                    </li>
-                    <li class="has-submenu">
-                        <a href="{{route('lab-tests.index')}}"><i class="fa fa-clinic-medical"></i>Lab Tests</a>
-                    </li>
-                    <li class="has-submenu">
-                        <a href="{{route('radiology-tests.index')}}"><i class="fa fa-file-medical"></i>Radiology Tests</a>
-                    </li>
-                    <li class="has-submenu">
-                        <a href="{{route('users.index')}}"><i class="fa fa-user-lock"></i>Users</a>
-                    </li>
+                    @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::CHEMIST)
+                        <li class="has-submenu">
+                            <a href="{{route('drugs.index')}}"><i class="fa fa-syringe"></i>Drugs</a>
+                        </li>
+                    @endif
+                    @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::LAB_TECHNICIAN)
+                        <li class="has-submenu">
+                            <a href="{{route('lab-tests.index')}}"><i class="fa fa-clinic-medical"></i>Lab Tests</a>
+                        </li>
+                    @endif
+                    @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::RADIOLOGY_TECHNICIAN)
+                        <li class="has-submenu">
+                            <a href="{{route('radiology-tests.index')}}"><i class="fa fa-file-medical"></i>Radiology
+                                Tests</a>
+                        </li>
+                    @endif
+                    @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::ADMIN)
+                        <li class="has-submenu">
+                            <a href="{{route('users.index')}}"><i class="fa fa-user-lock"></i>Users</a>
+                        </li>
+                    @endif
                     <li class="has-submenu">
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();

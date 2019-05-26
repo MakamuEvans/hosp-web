@@ -52,7 +52,7 @@
                                             <tr>
                                                 <th>{{$client->id}}</th>
                                                 <td><span class="co-name">{{$client->names}}</span></td>
-                                                <td>{{$client->gender}}</td>
+                                                <td>{{$client->formatted_gender}}</td>
                                                 <td>{{$client->dob}}</td>
                                                 <td>{{$client->phone_number}}</td>
                                                 <td>{{$client->blood_type}}</td>

@@ -50,7 +50,7 @@
                             <textarea rows="5" class="form-control" name="remarks"
                                       placeholder="Doctor's Diagnosis">{{$checkIn->doctor_diagnosis->remarks}}</textarea>
                         </span>
-                        @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::DOCTOR)
+                        @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::ADMIN || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::DOCTOR)
                             <div class="pt-1">
                                 <button type="submit"
                                         class="btn form-control btn-primary btn-sm waves-effect waves-light">Save
@@ -64,8 +64,10 @@
                             <div class="card-box">
                                 <div class="row pull-right">
                                     <label style="margin-right: 20px">Lab Tests </label>
-                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal"
-                                       class="pull-right">Request Lab Test</a>
+                                    @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::ADMIN || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::DOCTOR)
+                                        <a href="javascript;;" data-toggle="modal" data-target="#myModal"
+                                           class="pull-right">Request Lab Test</a>
+                                    @endif
                                     <div id="myModal" class="modal fade" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <lab-test :checkin="{{$checkIn}}"></lab-test>
@@ -94,7 +96,7 @@
                                                         <td>{{$item->remarks}}</td>
                                                         <td>{{$item->formatted_date}}</td>
                                                         <td>
-                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::LAB_TECHNICIAN)
+                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::ADMIN || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::LAB_TECHNICIAN)
                                                                 <a href="javascript;;" title="Reply" data-toggle="modal"
                                                                    data-target="#lab_{{$item->id}}"><i
                                                                             class="fa fa-reply"></i> </a>
@@ -126,8 +128,10 @@
                             <div class="card-box">
                                 <div class="row pull-right">
                                     <label style="margin-right: 20px">Radiology Tests </label>
-                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal2"
-                                       class="pull-right">Request Radiology Test</a>
+                                    @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::ADMIN || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::DOCTOR)
+                                        <a href="javascript;;" data-toggle="modal" data-target="#myModal2"
+                                           class="pull-right">Request Radiology Test</a>
+                                    @endif
                                     <div id="myModal2" class="modal fade" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <radiology-test :checkin="{{$checkIn}}"></radiology-test>
@@ -156,7 +160,7 @@
                                                         <td>{{$item->remarks}}</td>
                                                         <td>{{$item->formatted_date}}</td>
                                                         <td>
-                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::RADIOLOGY_TECHNICIAN)
+                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::ADMIN || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::RADIOLOGY_TECHNICIAN)
                                                                 <a href="javascript;;" title="Reply" data-toggle="modal"
                                                                    data-target="#radiology_{{$item->id}}"><i
                                                                             class="fa fa-reply"></i> </a>
@@ -164,7 +168,7 @@
                                                                      tabindex="-1" role="dialog"
                                                                      aria-labelledby="myModalLabel" aria-hidden="true">
                                                                     <radiology-test :checkin="{{$checkIn}}"
-                                                                              :test="{{$item}}"></radiology-test>
+                                                                                    :test="{{$item}}"></radiology-test>
                                                                 </div><!-- /.modal -->
                                                             @else
                                                                 Not Allowed
@@ -188,8 +192,10 @@
                             <div class="card-box">
                                 <div class="row pull-right">
                                     <label style="margin-right: 20px">Medication</label>
-                                    <a href="javascript;;" data-toggle="modal" data-target="#myModal3"
-                                       class="pull-right">Request Drugs</a>
+                                    @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::ADMIN || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::DOCTOR)
+                                        <a href="javascript;;" data-toggle="modal" data-target="#myModal3"
+                                           class="pull-right">Request Drugs</a>
+                                    @endif
                                     <div id="myModal3" class="modal fade" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <medication :checkin="{{$checkIn}}"></medication>
@@ -218,7 +224,7 @@
                                                         <td>{{$item->remarks}}</td>
                                                         <td>{{$item->formatted_date}}</td>
                                                         <td>
-                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == 1 || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::CHEMIST)
+                                                            @if(\Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::ADMIN || \Illuminate\Support\Facades\Auth::user()->user_type == \App\Helpers\Constants::CHEMIST)
                                                                 <a href="javascript;;" title="Reply" data-toggle="modal"
                                                                    data-target="#chem_{{$item->id}}"><i
                                                                             class="fa fa-reply"></i> </a>
@@ -226,7 +232,7 @@
                                                                      tabindex="-1" role="dialog"
                                                                      aria-labelledby="myModalLabel" aria-hidden="true">
                                                                     <medication :checkin="{{$checkIn}}"
-                                                                              :medication="{{$item}}"></medication>
+                                                                                :medication="{{$item}}"></medication>
                                                                 </div><!-- /.modal -->
                                                             @else
                                                                 Not Allowed
